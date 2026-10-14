@@ -1,0 +1,10 @@
+
+.dropzone-container {
+    border: 2px dashed white;
+    padding: 5rem;
+    margin: 2rem;
+}
+
+.dropzone-container.dragging {
+   border: solid 2px red;
+}
