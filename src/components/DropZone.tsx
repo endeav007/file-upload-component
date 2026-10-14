@@ -1,7 +1,14 @@
 import { useRef, useState } from 'react'
 import './css/DropZone.css'
 
-function DropZone() {
+
+//currently, only will allow one file to be dropped at a time. if multiple files are dropped, only the first will be used. 
+
+type Prop = {
+    onFileAdded: (file: File) => void;
+}
+
+function DropZone({onFileAdded}: Prop) {
     const dragCounter = useRef(0);
     const [isDragging, setIsDragging] = useState(false)
 
@@ -30,6 +37,7 @@ function DropZone() {
         setIsDragging(false);
         const files = Array.from(e.dataTransfer.files);
         console.log(files);
+        onFileAdded(files[0]);
     }
 
     return (

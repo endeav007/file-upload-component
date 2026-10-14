@@ -1,12 +1,19 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import FileList from './FileList'
 
-function ManualUpload() {
+
+type Prop = {
+    onFileAdded: (file: File) => void;
+}
+function ManualUpload({onFileAdded}: Prop) {
 
     const [file, setFile] = useState<File>();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
-            setFile(e.target.files[0]);
+            const files = Array.from(e.target.files);
+            setFile(files[0]);
+            
         }
     };
 
@@ -14,7 +21,8 @@ function ManualUpload() {
         if (!file) {
             return;
         }
-        console.log(`Uploading file: ${file.name}`);
+        //console.log(`Uploading file: ${file.name}`);
+        onFileAdded(file);
         
     }
 
