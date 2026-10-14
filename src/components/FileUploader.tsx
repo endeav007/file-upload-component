@@ -11,13 +11,18 @@ function FileUploader() {
 		setFileItem( [file, ...fileItem] );
 	}
 
+	const handleDelete = (indexToDelete: number) => {
+    setFileItem(prevFiles =>
+        prevFiles.filter((_, index) => index !== indexToDelete)
+    );
+};
+
 
 	return (
 		<div>
 			<Dropzone onFileAdded={addFile} />
 			<ManualUpload onFileAdded={addFile} />
-
-			<FileList fileItem={fileItem} />
+			<FileList fileItem={fileItem} onDelete={handleDelete} />
 		</div>
 	);
 	
