@@ -1,10 +1,24 @@
+:root{
+    --text: #272d2d;
+    --bg: #EDF5FC;
+    --accent:#4f8b67;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #EDF5FC;
+    --bg: #272d2d;
+  }
+}
+
 
 .dropzone-container {
-    border: 2px dashed white;
+    border: 4px dashed var(--text);
+    border-radius: 10px;
     padding: 5rem;
     margin: 2rem;
 }
 
 .dropzone-container.dragging {
-   border: solid 2px red;
+   border: dashed 4px var(--accent);
 }
