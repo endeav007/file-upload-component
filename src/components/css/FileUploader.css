@@ -1,0 +1,12 @@
+
+.file-uploader-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .file-uploader-container {
+        flex-direction: column;
+    }
+}

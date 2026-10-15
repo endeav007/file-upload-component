@@ -13,12 +13,19 @@
 
 
 .dropzone-container {
-    border: 4px dashed var(--text);
-    border-radius: 10px;
-    padding: 5rem;
-    margin: 2rem;
+  border: 4px dashed var(--text);
+  border-radius: 10px;
+  padding: 5rem 10rem;
+  margin: 2rem;
+  height: 20em;
 }
 
 .dropzone-container.dragging {
-   border: dashed 4px var(--accent);
+  border: dashed 4px var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .dropzone-container {
+    display: none;
+  }
 }

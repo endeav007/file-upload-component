@@ -1,0 +1,46 @@
+
+.file-list-container {
+    border: 1px solid var(--accent);
+    width: 20em;
+    min-height: 10em;
+    max-height: 30em;
+    overflow-y: scroll;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.file-list-container ul {
+    list-style-type: none;
+    padding: 0;
+   
+}
+
+.file-list-container ul li {
+    padding: 0.5em;
+    margin: 0;
+    border: solid 1px var(--text);
+}
+.file-list-container ul li button {
+    padding: 0.5em;
+    margin: 0.5em;
+    border: solid 1px var(--text);
+    border-radius: 5px;
+    background-color: var(--bg);
+    
+}
+
+.file-list-container ul button:hover{
+    background-color: var(--warning);
+    color: var(--bg);
+}
+
+
+@media (max-width: 1024px) {
+  .file-list-container {
+    width: 100%;
+    margin: 0;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+}

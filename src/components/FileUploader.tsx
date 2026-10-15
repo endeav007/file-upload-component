@@ -1,6 +1,7 @@
 import Dropzone from "./DropZone";
 import ManualUpload from "./ManualUpload";
 import FileList from "./FileList";
+import "./css/FileUploader.css"
 import { useState } from "react";
 
 function FileUploader() {
@@ -20,9 +21,18 @@ function FileUploader() {
 
 	return (
 		<div>
-			<Dropzone onFileAdded={addFile} />
-			<ManualUpload onFileAdded={addFile} />
-			<FileList fileItem={fileItem} onDelete={handleDelete} />
+			<h1> File Uploader</h1>
+			<div className="file-uploader-container">
+				<div className="uploading-methods"> 
+					<Dropzone onFileAdded={addFile} />
+					<ManualUpload onFileAdded={addFile} />
+				</div>
+				
+				<FileList fileItem={fileItem} onDelete={handleDelete} />
+			</div>
+			
+			
+			
 		</div>
 	);
 	
